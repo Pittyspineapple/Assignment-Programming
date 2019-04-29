@@ -10,7 +10,7 @@ int main() {
     printf("Amount of letters?");
     scanf("%d", &letters);
     char string[letters];
-    printf("What is you word?");
+    printf("What is you word?\n");
     scanf("%s", string); 
      
     int ChooseOperation;
@@ -25,6 +25,12 @@ int main() {
         case 2: 
         printf("Decryption Chosen.\n");
         break;
+        default: 
+        if (ChooseOperation <1 || ChooseOperation >2){
+        printf("Incorrect Input");
+        return 0;
+        }
+        
     }
         
     switch (ChooseOperation) {
