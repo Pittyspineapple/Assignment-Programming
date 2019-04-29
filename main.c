@@ -148,8 +148,28 @@ void rotation(char string[], int key, int ChooseOperation)
     
 void substitution(char string[], int ChooseOperation)
 {
-    char Alphabet[] = "abcdefghijklmnopqrstuvwxyz";
-    char substitution[] = "QWERTYUYOPASDFGHJKLZXCVBNM";
-    
-    for 
+    char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+ char substitution[] = "QWERTYUIOPASDFGHJKLZXCVBNM";
+ int Word;
+ int Alphabet;
+ int Substitution;
+ int i;
+ char letter;
+ int amount = strlen(string);
+ for (i = 0; i < amount; i++)
+ {
+  Word = string[i];
+  int k;
+  for (k = 0; k < 26; k++)
+  {
+   Alphabet = alphabet[k];
+   if (Word == Alphabet)
+   {
+    Substitution = substitution[k];
+    Word = Substitution;
+    letter = Word;
+    printf("%c", letter);
+   }
+  }
+ }
 }
