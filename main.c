@@ -53,41 +53,36 @@ void rotation(char string[], int key, int ChooseOperation)
     int Alphabet; //initialised to take characters position in ASCII table 
     int i; //loop counter for string
     int k; //loop counter for alphabet
-    int amount = strlen(string):
+    int amount = strlen(string);
     char Convert;
     
-    if (ChooseOperation == 1)
+    if(ChooseOperation == 1)
     {
-     for (i = 0; i<amount; i++)
-    
+        for(i = 0; i < amount; i++)
+    {
         Word = string[i];
         for(k = 0; k < 26; k++)
         {
-
             Alphabet = alphabet[k];
-            if (Word == Alphabet)
+            if(Word == Alphabet)
             {
-            
                 Alphabet = Alphabet + key;
-                if (Alphabet >122)
+                if(Alphabet > 122)
                 {
-                    
-                     Alphabet = Alphabet - 26;
-                     Convert = Alphabet;
-                     printf("%c", Convert);
-                }else if(Alphabet < 97){
-                    Alphabet + 26;
-                    Convert = Alphabet;
-                    printf("%c", Convert);
-                } 
-                
-            } 
-        }   
+                    Alphabet = Alphabet - 26;
+                    convert = Alphabet;
+                    printf("%c", convert);     
+                }else if(Alphabet < 97)
+                {
+                    Alphabet = Alphabet + 26;
+                    convert = Alphabet;
+                    printf("%c", convert);
+                }
+            }
+        }
     }
-    
     }
-
-
+}
 
 
 void substitution(char string[], int key, int ChooseOperation)
