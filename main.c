@@ -1,17 +1,14 @@
-#include <stdio.h> 
+#include <stdio.h>
 #include <string.h>
-
 void rotation(char string[], int key, int ChooseOperation);
-
 void substitution(char string[], int key, int ChooseOperation);
-
 int main() {
     
     int letters;
     printf("Amount of letters?");
     scanf("%d", &letters);
     char string[letters];
-    printf("What is you word?\n");
+    printf("What is you word?");
     scanf("%s", string); 
      
     int ChooseOperation;
@@ -19,42 +16,46 @@ int main() {
     printf("(2) Decryption\n");
     scanf("%d", &ChooseOperation);
     
-    switch (ChooseOperation) {
+    switch (ChooseOperation) 
+    {
         case 1: 
         printf("Encryption Chosen.\n");
         break;
         case 2: 
         printf("Decryption Chosen.\n");
         break;
-        default: 
-        if (ChooseOperation <1 || ChooseOperation >2){
-        printf("Incorrect Input");
-        return 0;
+        default:
+        if(ChooseOperation < 1 || ChooseOperation > 2)
+        {
+            printf("Incorrect input");
+            return 0;
         }
-        
     }
         
-    switch (ChooseOperation) {
+    switch (ChooseOperation) 
+    {
         case 1:
         printf("Enter Your Desired Key");
-        int key;  
+        int key;
         scanf("%d", &key);
         rotation(string, key, ChooseOperation);
         break;
         case 2: 
         substitution(string, key, ChooseOperation);
-        break;
-    }    
+        break;  
+    }
+    return 0;
 } 
-void rotation(char string[], int key, int ChooseOperation) 
-{   
+
+void rotation(char string[], int key, int ChooseOperation)
+{
     char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
-    int Word; //initialised to take a characters position in ASCII table
-    int Alphabet; //initialised to take characters position in ASCII table 
-    int i; //loop counter for string
-    int k; //loop counter for alphabet
+    int Word;//Intitalised to take a character's position in the ascii table.
+    int Alphabet;//Initialised to take a character's position in the ascii table.
+    int i;//loop counter for string.
+    int k;//loop counter for alphabet.
     int amount = strlen(string);
-    char Convert;
+    char convert;
     
     if(ChooseOperation == 1)
     {
@@ -82,9 +83,8 @@ void rotation(char string[], int key, int ChooseOperation)
         }
     }
     }
+    
 }
-
-
 void substitution(char string[], int key, int ChooseOperation)
 {
     
