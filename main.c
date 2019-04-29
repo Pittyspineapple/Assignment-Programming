@@ -1,9 +1,9 @@
 #include <stdio.h> 
 #include <string.h>
 
-void rotation(char string[], int key);
+void rotation(char string[], int key, int ChooseOperation);
 
-void substitution(char string[], int key);
+void substitution(char string[], int key, int ChooseOperation);
 
 int main() {
     
@@ -39,14 +39,14 @@ int main() {
         printf("Enter Your Desired Key");
         int key;  
         scanf("%d", &key);
-        rotation(string, key);
+        rotation(string, key, ChooseOperation);
         break;
         case 2: 
-        substitution(string, key);
+        substitution(string, key, ChooseOperation);
         break;
     }    
 } 
-void rotation(char string[], int key) 
+void rotation(char string[], int key, int ChooseOperation) 
 {   
     char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
     int Word; //initialised to take a characters position in ASCII table
@@ -87,7 +87,7 @@ void rotation(char string[], int key)
 
 
 
-void substitution(char string[], int key)
+void substitution(char string[], int key, int ChooseOperation)
 {
     
 }
