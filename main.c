@@ -148,29 +148,61 @@ void rotation(char string[], int key, int ChooseOperation)
     
 void substitution(char string[], int ChooseOperation)//data for substitution cipher
 {
- char alphabet[] = "abcdefghijklmnopqrstuvwxyz";//lower case letters
- char substitution[] = "QWERTYUIOPASDFGHJKLZXCVBNM";//upper case letters
+char alphabet[] =         "abcdefghijklmnopqrstuvwxyz";
+ char substitution[] =     "QWERTYUIOPASDFGHJKLZXCVBNM";
+ char low_substitution[] = "qwertyuiopasdfghjklzxcvbnm";
  int Word;
  int Alphabet;
  int Substitution;
  int i;
  char letter;
  int amount = strlen(string);
- for (i = 0; i < amount; i++)//function for encryption substitution cipher
+ int AlphaAmount = strlen(alphabet);
+ if (ChooseOperation == 1)
  {
-  Word = string[i];
-  int k;
-  for (k = 0; k < 26; k++)
+  for (i = 0; i < amount; i++)
   {
-   Alphabet = alphabet[k];//upper and lower case for letters to go from a word into ASCII letters
-   if (Word == Alphabet)
+   Word = string[i];
+   int k;
+   for (k = 0; k < AlphaAmount; k++)
    {
-    Substitution = substitution[k];
-    Word = Substitution;
-    letter = Word;
-    printf("%c", letter);//printing the ASCII values from the word the user put in
+    Alphabet = alphabet[k];
+    if (Word == Alphabet)
+    {
+     Substitution = substitution[k];
+     Word = Substitution;
+     letter = Word;
+     
+    }
    }
   }
  }
-} 
- 
+ else if (ChooseOperation == 2)
+ {
+  for (i = 0; i < amount; i++)
+  {
+   Word = string[i];
+   int k;
+   for (k = 0; k < AlphaAmount; k++)
+   {
+    Alphabet = alphabet[k];
+    if ((Word + 32) == Alphabet)
+    {
+     Word = Word + 32;
+     int j;
+     for (j = 0; j < 26; j++)
+     {
+      if (Word == low_substitution[j])
+      {
+       Word = alphabet[j];
+       letter = Word;
+       printf("%c", letter, j);
+       break;
+      }
+     }
+     break;
+    }
+   }
+  }
+ }
+ }
