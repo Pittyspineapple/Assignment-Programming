@@ -70,11 +70,18 @@ void rotation(char string[], int key)
                 if (Alphabet >122)
                 {
                     
-                     Alphabet == Alphabet - 26;
-                     Convert == Alphabet;
+                     Alphabet = Alphabet - 26;
+                     Convert = Alphabet;
                      printf("%c", convert);
-                {else if()
-}
+                }else if()
+                { 
+                
+            } 
+        }
+    }
+
+
+
 
 void substitution(char string[], int key)
 {
