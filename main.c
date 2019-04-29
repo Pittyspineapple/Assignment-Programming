@@ -46,8 +46,12 @@ int main() {
     }    
 } 
 void rotation(char string[], int key, int letters) 
-{
-    
+{   
+    char Alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+    int Word; //initialised to take a characters position in ASCII table
+    int Alphabet; //initialised to take characters position in ASCII table 
+    int i; //loop counter for string
+    int k; //loop counter for alphabet
 }
 
 void substitution(char string[], int key, int letters)
