@@ -22,5 +22,11 @@ int main() {
         printf("Decryption Chosen.\n");
         break;
         }
+    Switch (ChooseOperation) {
+        case 1:
+        int key;
+        printf("Enter Your Desired Key");
+        scanf("%d", &key);
         
+    }    
 } 
