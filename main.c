@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 void rotation(char string[], int key, int ChooseOperation);
-void substitution(char string[], int key, int ChooseOperation);
+void substitution(char string[], int ChooseOperation);
 int main() {
     
     int letters;
@@ -31,18 +31,39 @@ int main() {
             return 0;
         }
     }
+    
+    int type;
+    printf("(1) Rotation Cipher.\n");
+    printf("(2) Substitution Cipher.\n");
+    scanf("%d", &type);
         
-    switch (ChooseOperation) 
+    if(type == 1)
     {
-        case 1:
-        printf("Enter Your Desired Key");
         int key;
-        scanf("%d", &key);
-        rotation(string, key, ChooseOperation);
-        break;
-        case 2: 
-        substitution(string, key, ChooseOperation);
-        break;  
+        switch (ChooseOperation) 
+        {
+            case 1:
+            printf("Enter Your Desired Key");
+            scanf("%d", &key);
+            rotation(string, key, ChooseOperation);
+            break;
+            case 2: 
+            printf("Enter Your Desired Key");
+            scanf("%d", &key);
+            rotation(string, key, ChooseOperation);
+            break;  
+        }
+    }else if(type == 2)
+    {
+        switch(ChooseOperation)
+        {
+            case 1:
+            substitution(string, ChooseOperation);
+            break;
+            case 2:
+            substitution(string, ChooseOperation);
+            break;
+        }
     }
     return 0;
 } 
@@ -53,39 +74,79 @@ void rotation(char string[], int key, int ChooseOperation)
     int Word;//Intitalised to take a character's position in the ascii table.
     int Alphabet;//Initialised to take a character's position in the ascii table.
     int i;//loop counter for string.
-    int k;//loop counter for alphabet.
     int amount = strlen(string);
-    char convert;
+    char letter;
     
     if(ChooseOperation == 1)
     {
         for(i = 0; i < amount; i++)
-    {
-        Word = string[i];
-        for(k = 0; k < 26; k++)
         {
-            Alphabet = alphabet[k];
-            if(Word == Alphabet)
-            {
-                Alphabet = Alphabet + key;
-                if(Alphabet > 122)
-                {
-                    Alphabet = Alphabet - 26;
-                    convert = Alphabet;
-                    printf("%c", convert);     
-                }else if(Alphabet < 97)
-                {
-                    Alphabet = Alphabet + 26;
-                    convert = Alphabet;
-                    printf("%c", convert);
-                }
-            }
-        }
-    }
-    }
-    
+           Word = string[i];
+           int k;
+           for(k = 0; k < 26; k++)
+           {
+               Alphabet = alphabet[k];
+               if(Word == Alphabet)
+               {
+                   Word = Word + key;
+                   if (Word > 122)
+                   {
+                       Word = Word - 26;
+                       letter = Word;
+                       printf("%c", letter);
+                       break;
+                   }else if(Word < 97)
+                   {
+                       Word = Word + 26;
+                       letter = Word;
+                       printf("%c", letter);
+                       break;
+                   }else
+                   {
+                       letter = Word;
+                       printf("%c", letter);
+                       break;
+                   }
+               }
+           }
+       } 
+   }else if(ChooseOperation == 2)
+   {
+       for(i = 0; i < amount; i++)
+        {
+           Word = string[i];
+           int k;
+           for(k = 0; k < 26; k++)
+           {
+               Alphabet = alphabet[k];
+               if(Word == Alphabet)
+               {
+                   Word = Word - key;
+                   if (Word > 122)
+                   {
+                       Word = Word - 26;
+                       letter = Word;
+                       printf("%c", letter);
+                       break;
+                   }else if(Word < 97)
+                   {
+                       Word = Word + 26;
+                       letter = Word;
+                       printf("%c", letter);
+                       break;
+                   }else
+                   {
+                       letter = Word;
+                       printf("%c", letter);
+                       break;
+                   }
+               }
+           }
+       } 
+   }
 }
-void substitution(char string[], int key, int ChooseOperation)
+    
+void substitution(char string[], int ChooseOperation)
 {
     
 }
