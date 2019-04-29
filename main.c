@@ -37,7 +37,11 @@ int main() {
     }    
 } 
 void rotation(char string[], int key, int letters) 
-{}
+{
+    
+}
 
 void substitution(char string[], int key, int letters)
-{}
+{
+    
+}
