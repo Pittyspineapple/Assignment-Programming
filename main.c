@@ -48,7 +48,7 @@ int main() {
 } 
 void rotation(char string[], int key) 
 {   
-    char Alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+    char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
     int Word; //initialised to take a characters position in ASCII table
     int Alphabet; //initialised to take characters position in ASCII table 
     int i; //loop counter for string
@@ -62,19 +62,23 @@ void rotation(char string[], int key)
         for(k = 0; k < 26; k++)
         {
 
-            Alphabet = Alphabet[k];
+            Alphabet = alphabet[k];
             if (Word == Alphabet)
             {
             
-                Alphabet == Alphabet + key;
+                Alphabet = Alphabet + key;
                 if (Alphabet >122)
                 {
                     
                      Alphabet = Alphabet - 26;
                      Convert = Alphabet;
-                     printf("%c", convert);
-                }else if()
-                { 
+                     printf("%c", Convert);
+                }else if(){
+                    (Alphabet < 97)
+                    (Alphabet + 26);
+                    Convert = Alphabet;
+                    printf("%c", Convert);
+                } 
                 
             } 
         }
