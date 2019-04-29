@@ -140,10 +140,10 @@ void rotation(char string[], int key, int ChooseOperation)
 }
 void substitution(char string[], int ChooseOperation)//data for substitution cipher
 {
-char alphabet[] =         "abcdefghijklmnopqrstuvwxyz";
- char substitution[] =     "QWERTYUIOPASDFGHJKLZXCVBNM";
+char alphabet[] =         "abcdefghijklmnopqrstuvwxyz";//lower case letters
+ char substitution[] =     "QWERTYUIOPASDFGHJKLZXCVBNM";//upper case letters
  char low_substitution[] = "qwertyuiopasdfghjklzxcvbnm";
- int Word;
+ int Word;//integers and characters for substitution cipher
  int Alphabet;
  int Substitution;
  int i;
@@ -152,43 +152,43 @@ char alphabet[] =         "abcdefghijklmnopqrstuvwxyz";
  int AlphaAmount = strlen(alphabet);
  if (ChooseOperation == 1)
  {
-  for (i = 0; i < amount; i++)
+  for (i = 0; i < amount; i++)//encryption for substitution cipher function
   {
    Word = string[i];
    int k;
-   for (k = 0; k < AlphaAmount; k++)
+   for (k = 0; k < AlphaAmount; k++)//value for k
    {
-    Alphabet = alphabet[k];
+    Alphabet = alphabet[k];//letters in alphabet that equal the word 
     if (Word == Alphabet)
     {
      Substitution = substitution[k];
-     Word = Substitution;
+     Word = Substitution;//substituting the word nto the ciphered text
      letter = Word;
      printf("%c", letter);
     }
    }
   }
  }
- else if (ChooseOperation == 2)
+ else if (ChooseOperation == 2)//decryption substitution cipher function
  {
-  for (i = 0; i < amount; i++)
+  for (i = 0; i < amount; i++)//value for i
   {
    Word = string[i];
    int k;
-   for (k = 0; k < AlphaAmount; k++)
+   for (k = 0; k < AlphaAmount; k++)//value for k
    {
     Alphabet = alphabet[k];
-    if ((Word + 32) == Alphabet)
+    if ((Word + 32) == Alphabet)//values in the ASCII table after being changed and being able to be upper and lower case
     {
-     Word = Word + 32;
+     Word = Word + 32;//changing the substituted value back to original starting value
      int j;
-     for (j = 0; j < 26; j++)
+     for (j = 0; j < 26; j++)//turning the letters/values of the ASCII table back to normal letters in order
      {
       if (Word == low_substitution[j])
       {
        Word = alphabet[j];
        letter = Word;
-       printf("%c", letter);
+       printf("%c", letter);//prints the letters for the word
        break;
       }
      }
