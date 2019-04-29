@@ -148,8 +148,8 @@ void rotation(char string[], int key, int ChooseOperation)
     
 void substitution(char string[], int ChooseOperation)//data for substitution cipher
 {
-char alphabet[] =         "abcdefghijklmnopqrstuvwxyz";
- char substitution[] =     "QWERTYUIOPASDFGHJKLZXCVBNM";
+ char alphabet[] =         "abcdefghijklmnopqrstuvwxyz";//lower case letters
+ char substitution[] =     "QWERTYUIOPASDFGHJKLZXCVBNM";//upper case letters
  char low_substitution[] = "qwertyuiopasdfghjklzxcvbnm";
  int Word;
  int Alphabet;
@@ -160,14 +160,14 @@ char alphabet[] =         "abcdefghijklmnopqrstuvwxyz";
  int AlphaAmount = strlen(alphabet);
  if (ChooseOperation == 1)
  {
-  for (i = 0; i < amount; i++)
+  for (i = 0; i < amount; i++)//substitution cipher encryption
   {
    Word = string[i];
    int k;
    for (k = 0; k < AlphaAmount; k++)
    {
     Alphabet = alphabet[k];
-    if (Word == Alphabet)
+    if (Word == Alphabet)//changes word into ASCII letters 
     {
      Substitution = substitution[k];
      Word = Substitution;
@@ -177,7 +177,7 @@ char alphabet[] =         "abcdefghijklmnopqrstuvwxyz";
    }
   }
  }
- else if (ChooseOperation == 2)
+ else if (ChooseOperation == 2)//substitution cipher decryption
  {
   for (i = 0; i < amount; i++)
   {
@@ -186,11 +186,11 @@ char alphabet[] =         "abcdefghijklmnopqrstuvwxyz";
    for (k = 0; k < AlphaAmount; k++)
    {
     Alphabet = alphabet[k];
-    if ((Word + 32) == Alphabet)
+    if ((Word + 32) == Alphabet)//changing for ASCII table values
     {
      Word = Word + 32;
      int j;
-     for (j = 0; j < 26; j++)
+     for (j = 0; j < 26; j++)//back to ASCII values from change in substitution
      {
       if (Word == low_substitution[j])
       {
