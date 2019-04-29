@@ -62,10 +62,10 @@ void rotation(char string[], int key)
     for k=0; k<26; k++{
     Alphabet = Alphabet[k];
     
-    if Word == Alphabet;{
+    if (Word == Alphabet);
     Alphabet == Alphabet + key;
     
-    if Alphabet >122 {
+    if (Alphabet >122)
         Alphabet == Alphabet - 26;
         Convert == Alphabet 
         printf("%c", convert)
