@@ -1,5 +1,6 @@
 #include <stdio.h> 
-
+void rotation(char string [], key);
+void substitution(char string [], key);
 int main() {
     
     int letters;
@@ -22,7 +23,7 @@ int main() {
         printf("Decryption Chosen.\n");
         break;
         }
-    Switch (ChooseOperation) {
+    switch (ChooseOperation) {
         case 1:
         int key;
         printf("Enter Your Desired Key");
