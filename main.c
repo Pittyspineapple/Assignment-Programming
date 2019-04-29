@@ -1,8 +1,9 @@
 #include <stdio.h> 
+#include <string.h>
 
-void rotation(char string[], int key, int letters);
+void rotation(char string[], int key);
 
-void substitution(char string[], int key, int letters);
+void substitution(char string[], int key);
 
 int main() {
     
@@ -38,23 +39,39 @@ int main() {
         printf("Enter Your Desired Key");
         int key;  
         scanf("%d", &key);
-        rotation(string, key, letters);
+        rotation(string, key);
         break;
         case 2: 
-        substitution(string, key, letters);
+        substitution(string, key);
         break;
     }    
 } 
-void rotation(char string[], int key, int letters) 
+void rotation(char string[], int key) 
 {   
     char Alphabet[] = "abcdefghijklmnopqrstuvwxyz";
     int Word; //initialised to take a characters position in ASCII table
     int Alphabet; //initialised to take characters position in ASCII table 
     int i; //loop counter for string
     int k; //loop counter for alphabet
+    int amount = strlen(string):
+    char Convert;
+    
+    for i=0; i<amount; i++
+    Word = string[i];
+    
+    for k=0; k<26; k++{
+    Alphabet = Alphabet[k];
+    
+    if Word == Alphabet;{
+    Alphabet == Alphabet + key;
+    
+    if Alphabet >122 {
+        Alphabet == Alphabet - 26;
+        Convert == Alphabet 
+        printf("%c", convert)
 }
 
-void substitution(char string[], int key, int letters)
+void substitution(char string[], int key)
 {
     
 }
