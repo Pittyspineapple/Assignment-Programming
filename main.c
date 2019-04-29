@@ -14,4 +14,13 @@ int main() {
     printf("(2) Decryption\n");
     scanf("%d", &ChooseOperation);
     
+    switch (ChooseOperation) {
+        case 1: 
+        printf("Encryption Chosen.\n");
+        break;
+        case 2: 
+        printf("Decryption Chosen.\n");
+        break;
+        }
+        
 } 
