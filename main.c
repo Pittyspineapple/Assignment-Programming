@@ -56,7 +56,9 @@ void rotation(char string[], int key, int ChooseOperation)
     int amount = strlen(string):
     char Convert;
     
-    for (i = 0; i<amount; i++)
+    if (ChooseOperation == 1)
+    {
+     for (i = 0; i<amount; i++)
     
         Word = string[i];
         for(k = 0; k < 26; k++)
@@ -73,15 +75,16 @@ void rotation(char string[], int key, int ChooseOperation)
                      Alphabet = Alphabet - 26;
                      Convert = Alphabet;
                      printf("%c", Convert);
-                }else if(){
-                    (Alphabet < 97)
-                    (Alphabet + 26);
+                }else if(Alphabet < 97){
+                    Alphabet + 26;
                     Convert = Alphabet;
                     printf("%c", Convert);
                 } 
                 
             } 
-        }
+        }   
+    }
+    
     }
 
 
