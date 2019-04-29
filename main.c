@@ -32,7 +32,7 @@ int main() {
         break;
         case 2: 
         substitution(string, key);
-        
+        break;
         
     }    
 } 
