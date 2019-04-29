@@ -1,6 +1,6 @@
 #include <stdio.h> 
-void rotation(char string [], int key);
-void substitution(char string [], int key);
+void rotation(char string[], int key, int letters);
+void substitution(char string[], int key, int letters);
 int main() {
     
     int letters;
@@ -25,14 +25,19 @@ int main() {
         }
     switch (ChooseOperation) {
         case 1:
-        int key;
         printf("Enter Your Desired Key");
+        int key;  
         scanf("%d", &key);
-        rotation(string, key);
+        rotation(string, key, letters);
         break;
         case 2: 
-        substitution(string, key);
+        substitution(string, key, letters);
         break;
         
     }    
 } 
+void rotation(char string[], int key, int letters) 
+{}
+
+void substitution(char string[], int key, int letters)
+{}
