@@ -29,6 +29,9 @@ int main() {
         printf("Enter Your Desired Key");
         scanf("%d", &key);
         rotation(string, key);
+        break;
+        case 2: 
+        substitution(string, key);
         
         
     }    
