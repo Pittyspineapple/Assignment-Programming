@@ -148,5 +148,8 @@ void rotation(char string[], int key, int ChooseOperation)
     
 void substitution(char string[], int ChooseOperation)
 {
+    char Alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+    char substitution[] = "QWERTYUYOPASDFGHJKLZXCVBNM";
     
+    for 
 }
