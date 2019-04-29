@@ -3,44 +3,39 @@
 void rotation(char string[], int key, int ChooseOperation);//initializing characters and integers
 void substitution(char string[], int ChooseOperation); //initializing characters and integers
 int main() {
-    
     int letters;
     printf("Amount of letters?");//asking user for how long the word is
     scanf("%d", &letters); //records amount of letters
     char string[letters]; //remembers the value
     printf("What is you word?");//asks user for the word they wanna decrypt or encrypt
-    scanf("%s", string); 
-     
+    scanf("%s", string);
     int ChooseOperation; //asks user for what operation they wanna do
-    printf("(1) Encryption\n"); 
+    printf("(1) Encryption\n");
     printf("(2) Decryption\n");
     scanf("%d", &ChooseOperation); //records chosen operation
-    
     switch (ChooseOperation) //operation for encryption and decryption
     {
-        case 1: 
+        case 1:
         printf("Encryption Chosen.\n");
         break;
-        case 2: 
+        case 2:
         printf("Decryption Chosen.\n");
         break;
         default:
-        if(ChooseOperation < 1 || ChooseOperation > 2)//has to be one or 2 
+        if(ChooseOperation < 1 || ChooseOperation > 2)//has to be one or 2
         {
             printf("Incorrect input"); //if value is 1< >2
             return 0;
         }
     }
-    
     int type; //user chooses cipher type
     printf("(1) Rotation Cipher.\n");
     printf("(2) Substitution Cipher.\n");
     scanf("%d", &type); //records users chosen cipher type
-        
     if(type == 1)//rotation cipher chosen by user
     {
         int key;
-        switch (ChooseOperation) 
+        switch (ChooseOperation)
         {
             case 1://encryption
             printf("Enter Your Desired Key");//asks user for key
@@ -51,7 +46,7 @@ int main() {
             printf("Enter Your Desired Key");//asks user for key
             scanf("%d", &key);//remembers key
             rotation(string, key, ChooseOperation);
-            break;  
+            break;
         }
     }else if(type == 2)//substitution cipher
     {
@@ -66,8 +61,7 @@ int main() {
         }
     }
     return 0;
-} 
-
+}
 void rotation(char string[], int key, int ChooseOperation)
 {
     char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
@@ -76,14 +70,13 @@ void rotation(char string[], int key, int ChooseOperation)
     int i;//loop counter for string.
     int amount = strlen(string);
     char letter;
-    
     if(ChooseOperation == 1)//function for rotation encryption cipher
     {
         for(i = 0; i < amount; i++)
         {
            Word = string[i];
            int k;
-           for(k = 0; k < 26; k++)//amount of letters in Alphabet 
+           for(k = 0; k < 26; k++)//amount of letters in Alphabet
            {
                Alphabet = alphabet[k];
                if(Word == Alphabet)//changing word into ASCII letters
@@ -99,7 +92,7 @@ void rotation(char string[], int key, int ChooseOperation)
                    {
                        Word = Word + 26;//turns letters back to the ASCII table values
                        letter = Word;
-                       printf("%c", letter);//prints vaues of the ASCII table 
+                       printf("%c", letter);//prints vaues of the ASCII table
                        break;
                    }else
                    {
@@ -109,7 +102,7 @@ void rotation(char string[], int key, int ChooseOperation)
                    }
                }
            }
-       } 
+       }
    }else if(ChooseOperation == 2)//function for rotation decryption cipher
    {
        for(i = 0; i < amount; i++)
@@ -122,13 +115,13 @@ void rotation(char string[], int key, int ChooseOperation)
                if(Word == Alphabet)//changing word into ASCII letters
                {
                    Word = Word - key;
-                   if (Word > 122)//no letters after this value 
+                   if (Word > 122)//no letters after this value
                    {
                        Word = Word - 26;//takes value back 26 so from 122 it = 97
                        letter = Word;
                        printf("%c", letter);
                        break;
-                   }else if(Word < 97)//all letters 
+                   }else if(Word < 97)//all letters
                    {
                        Word = Word + 26;//takes values back and puts them into the ASCII table
                        letter = Word;
@@ -142,14 +135,13 @@ void rotation(char string[], int key, int ChooseOperation)
                    }
                }
            }
-       } 
+       }
    }
 }
-    
 void substitution(char string[], int ChooseOperation)//data for substitution cipher
 {
- char alphabet[] =         "abcdefghijklmnopqrstuvwxyz";//lower case letters
- char substitution[] =     "QWERTYUIOPASDFGHJKLZXCVBNM";//upper case letters
+char alphabet[] =         "abcdefghijklmnopqrstuvwxyz";
+ char substitution[] =     "QWERTYUIOPASDFGHJKLZXCVBNM";
  char low_substitution[] = "qwertyuiopasdfghjklzxcvbnm";
  int Word;
  int Alphabet;
@@ -160,24 +152,24 @@ void substitution(char string[], int ChooseOperation)//data for substitution cip
  int AlphaAmount = strlen(alphabet);
  if (ChooseOperation == 1)
  {
-  for (i = 0; i < amount; i++)//substitution cipher encryption
+  for (i = 0; i < amount; i++)
   {
    Word = string[i];
    int k;
    for (k = 0; k < AlphaAmount; k++)
    {
     Alphabet = alphabet[k];
-    if (Word == Alphabet)//changes word into ASCII letters 
+    if (Word == Alphabet)
     {
      Substitution = substitution[k];
      Word = Substitution;
      letter = Word;
-     
+     printf("%c", letter);
     }
    }
   }
  }
- else if (ChooseOperation == 2)//substitution cipher decryption
+ else if (ChooseOperation == 2)
  {
   for (i = 0; i < amount; i++)
   {
@@ -186,17 +178,17 @@ void substitution(char string[], int ChooseOperation)//data for substitution cip
    for (k = 0; k < AlphaAmount; k++)
    {
     Alphabet = alphabet[k];
-    if ((Word + 32) == Alphabet)//changing for ASCII table values
+    if ((Word + 32) == Alphabet)
     {
      Word = Word + 32;
      int j;
-     for (j = 0; j < 26; j++)//back to ASCII values from change in substitution
+     for (j = 0; j < 26; j++)
      {
       if (Word == low_substitution[j])
       {
        Word = alphabet[j];
        letter = Word;
-       printf("%c", letter, j);
+       printf("%c", letter);
        break;
       }
      }
