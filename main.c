@@ -56,19 +56,24 @@ void rotation(char string[], int key)
     int amount = strlen(string):
     char Convert;
     
-    for i=0; i<amount; i++
-    Word = string[i];
+    for (i = 0; i<amount; i++)
     
-    for k=0; k<26; k++{
-    Alphabet = Alphabet[k];
-    
-    if (Word == Alphabet);
-    Alphabet == Alphabet + key;
-    
-    if (Alphabet >122)
-        Alphabet == Alphabet - 26;
-        Convert == Alphabet 
-        printf("%c", convert)
+        Word = string[i];
+        for(k = 0; k < 26; k++)
+        {
+
+            Alphabet = Alphabet[k];
+            if (Word == Alphabet)
+            {
+            
+                Alphabet == Alphabet + key;
+                if (Alphabet >122)
+                {
+                    
+                     Alphabet == Alphabet - 26;
+                     Convert == Alphabet;
+                     printf("%c", convert);
+                {else if()
 }
 
 void substitution(char string[], int key)
